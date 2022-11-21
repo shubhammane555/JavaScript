@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <script>
+        class stack{
+            constructor(){
+                this.item= new Array(19);
+
+            }
+            push(value){
+                this.item.push(value);
+
+                if(this.item.length==19)
+                {
+                    alert("stack is overflow");
+                    return
+                }
+               
+            }
+            pop(value){
+                if(this.item.length==0)
+                {
+                    alert("stack is underflow");
+                    return
+                }
+                this.item.pop(value)
+            }
+            peek(){
+                if(this.item.length==0){
+                    return null;
+                }
+                return this.item[this.item.length-1];
+            }
+
+            getsize(){
+               return this.item.length;
+            }
+            isEmpty(){
+                return this.getsize()==0;
+            }
+
+            clear() {
+		    this.items = [];
+		  }
+        }
+        let stack1=new stack();
+        stack1.push("1");
+        stack1.push("2");
+        stack1.push("3");
+        stack1.push("4");
+
+console.log(stack1);
+stack1.pop();
+console.log(stack1);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

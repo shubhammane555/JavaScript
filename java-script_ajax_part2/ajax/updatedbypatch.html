@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <button class="btn btn-dark my-3" onclick="request()">Patch user</button>
+
+      <table id="tab" class="table"></table>
+    </div>
+    <script>
+      function request() {
+        let httpRequest = new XMLHttpRequest();
+        let user = {
+          name: "morpheus",
+          job: "zion resident",
+        };
+
+        httpRequest.open("PATCH", "https://reqres.in/api/users/2");
+        httpRequest.setRequestHeader("content-Type", "application/json");
+        httpRequest.send(JSON.stringify(user));
+        httpRequest.onreadystatechange = function () {
+          if (httpRequest.status == 200 || httpRequest.readyState == 4) {
+            let resource = JSON.parse(httpRequest.responseText);
+            console.log(resource);
+
+            let content = `<thead><th class="col">NAME</th><th class="col">JOB</th><th class="col">updated at</th></thead><tbody>`;
+            content += `<tr><th scope="">${resource.name}</th><td>${resource.job}</td><td>${resource.updatedAt}</td></tr></tbody>`;
+            document.getElementById("tab").innerHTML = content;
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

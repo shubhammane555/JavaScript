@@ -1,0 +1,51 @@
+<html>
+<head>
+<script language="JavaScript">
+function  add()
+{
+var a= document.f1.t1.value;
+var b= document.f1.t2.value;
+var Z=a+b;
+ document.f1.t3.value=Z;
+
+}
+function  sub()
+{
+var a= document.f1.t1.value;
+var b= document.f1.t2.value;
+var Z=a-b;
+ document.f1.t3.value=Z;
+}
+function mul()
+{
+var a= document.f1.t1.value;
+var b= document.f1.t2.value;
+var Z=a*b;
+ document.f1.t3.value=Z;
+}
+function  div()
+{
+var a= document.f1.t1.value;
+var b= document.f1.t2.value;
+var Z=a/b;
+ document.f1.t3.value=Z;
+}
+
+
+
+</script>
+</head>
+<body>
+<form name=F1>
+enter num1 <input type="text" name="t1"> <br><br>
+enter num1 <input type="text" name="t2"> <br><br>
+<input type=button value="+" onclick="add()">
+<input type=button value="-" onclick="sub()">
+<input type=button value="*" onclick="mul()">
+<input type=button value="/" onclick="div()"><br><br>
+<input type=button value="reset" onclick="reset()">
+result <input type="text" name="t3"> <br><br>
+</form>
+
+</body>
+</html>

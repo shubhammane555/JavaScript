@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- A shop will give a discount of 10% if the cost of the purchased quantity 
+    is more than 1000.
+Ask the user for the quantity.
+Suppose, one unit will cost 100.
+Judge and print the total cost for the user. -->
+<script>
+
+let qty=parseInt(prompt("enter user quantity"));
+let total=qty*100;
+if(total>1000)
+{
+    let dis=total*0.10;
+    let fdis=total-dis;
+    alert("your total discounted amount is"+fdis);
+}
+else{
+    alert("your total amount "+total);
+}
+
+</script>
+
+
+</body>
+</html>

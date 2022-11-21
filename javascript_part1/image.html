@@ -1,0 +1,24 @@
+<html>
+<head>
+<script language="JavaScript">
+function zoomin()
+{
+document.f1.myimage.width=document.f1.myimage.width+50;
+document.f1.myimage.height=document.f1.myimage.height+50;
+}
+function zoomout()
+{
+document.f1.myimage.width=document.f1.myimage.width-50;
+document.f1.myimage.height=document.f1.myimage.height-50;
+}
+</script>
+<body>
+<form name=f1>
+<image src=abc.jpg width=200 height=200 border=2 name=myimage>
+<br><br>
+<hr color=red size=2>
+<input type=button value="zoomin" onclick="zoomin()">
+<input type=button value="zoomout" onclick="zoomout()">
+</form>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class tv{
+    constructor(brand){
+    this.brand=brand;
+    this.channel=1;
+    this.volume=50;
+    }
+
+    increaseVol(amt){
+    this.volume+=amt;
+    if(this.volume<100){
+        console.log("volume is increesed by "+this.volume);
+    }
+    else{
+        console.log("volume is not greter than 100"+(this.volume=100));
+    }
+}
+
+decreaseVol(amt){
+    this.volume-=amt;
+    if(this.volume>=0){
+        console.log("volume can decressed by"+this.volume);
+    }
+    else{
+        console.log("volume can not be less than 1"+(this.volume=1));
+    }
+}
+
+getChannel(num){
+    if(num>0 && num<50)
+    {
+        console.log("channel can be channed"+(this.channel=num));
+    }
+    else{
+        console.log("channel is not available");
+}
+}
+reset() 
+{
+console.log("reset default");
+this.channel=1;
+this.volume=50;
+}
+
+Status()
+{
+    return `${this.brand} at channel ${this.channel},volume ${this.volume}`; 
+}
+}
+
+ const tvChannel=new tv("sony");
+
+console.log("Default status " + tvChannel.Status());
+console.log("----------------------");
+tvChannel.increaseVol(40);
+console.log(tvChannel.Status());
+tvChannel.increaseVol(200); 
+console.log(tvChannel.Status());
+console.log("----------------------");
+tvChannel.decreaseVol(30);
+console.log(tvChannel.Status());
+tvChannel.decreaseVol(200);
+console.log(tvChannel.Status());
+console.log("----------------------");
+tvChannel.getChannel(8);
+console.log(tvChannel.Status());
+tvChannel.getChannel(60);
+console.log(tvChannel.Status());
+console.log("----------------------");
+tvChannel.reset();
+console.log(tvChannel.Status());
+console.log("----------------------");
+console.log(tvChannel.Status());
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX_ReqRes_12</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    class="container-fluid"
+    style="background-color: rgba(171, 217, 195, 0.628)"
+  >
+    <button class="btn btn-dark my-3" id="ajaxButton1" type="button">
+      CREATE-LOGIN
+    </button>
+    <hr />
+
+    <div id="ajaxResponseContent"></div>
+    <hr />
+
+    <article id="userDetails"></article>
+
+    <script>
+      (function () {
+        let httpRequest;
+        document
+          .getElementById("ajaxButton1")
+          .addEventListener("click", makeRequest);
+
+        function makeRequest() {
+          const newUser = {
+            email: "eve.holt@reqres.in",
+            password: "cityslicka",
+          };
+
+          httpRequest = new XMLHttpRequest();
+
+          if (!httpRequest) {
+            alert("Giving up :( Cannot create an XMLHTTP instance");
+            return false;
+          }
+          httpRequest.onreadystatechange = displayEmployees;
+          httpRequest.open("POST", "https://reqres.in/api/login");
+          httpRequest.setRequestHeader("Content-Type", "application/json");
+
+          httpRequest.send(JSON.stringify(newUser));
+        }
+
+        function displayEmployees() {
+          try {
+            if (httpRequest.readyState === XMLHttpRequest.DONE) {
+              if (httpRequest.status === 200) {
+                console.log(httpRequest.responseText);
+                document.getElementById("ajaxResponseContent").innerText =
+                  httpRequest.responseText;
+                alert("Login Successfull");
+              } else {
+                console.error("There was a problem with the request.");
+                alert("There was a problem with the request.");
+              }
+            }
+          } catch (e) {
+            console.error(e);
+            alert("Caught Exception: " + e.description);
+          }
+        }
+      })();
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

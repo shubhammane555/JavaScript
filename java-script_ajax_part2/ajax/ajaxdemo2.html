@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" id="userId" name="userId" /><br /><br />
+    <button type="button" id="ajaxbutton">Display All User</button>
+    <button type="button" id="ajaxbutton1">Delete Single user</button>
+    <hr />
+
+    <div id="ajaxresponse"></div>
+    <hr />
+
+    <table id="userdetails"></table>
+  </body>
+  <script>
+    (function () {
+      let httpRequest;
+      document
+        .getElementById("ajaxbutton")
+        .addEventListener("click", makeRequest);
+
+      document
+        .getElementById("ajaxbutton1")
+        .addEventListener("click", deleteuser);
+
+      function makeRequest() {
+        httpRequest = new XMLHttpRequest();
+
+        if (!httpRequest) {
+          alert("Giving up:(cannot create an XMLHTTP instance");
+          return false;
+        }
+        httpRequest.onreadystatechange = displayEmp;
+        httpRequest.open("GET", "https://reqres.in/api/users?page=2");
+        httpRequest.send();
+      }
+
+      function deleteuser() {
+        httpRequest = new XMLHttpRequest();
+
+        if (!httpRequest) {
+          alert("giving up:(cannot create an XMLHTTP instance");
+          return false;
+        }
+        httpRequest.onreadystatechange = deleteemp;
+        var userId = document.getElementById("userId").value;
+        httpRequest.open("DELETE", "https://reqres.in/api/users/" + userId);
+        httpRequest.send();
+      }
+
+      function displayEmp() {
+        try {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+              document.getElementById("ajaxresponse").innerText =
+                httpRequest.responseText;
+
+              let user = JSON.parse(httpRequest.responseText);
+              let tbody = `<caption>User Details</caption>`;
+              for (let i = 0; i < user.data.length; i++) {
+                let obj = user.data[i];
+                tbody += `<tr><th> Id:</th><td>${obj.id}</td></tr>`;
+                tbody += `<tr><th> Email:</th><td>${obj.email}</td></tr>`;
+                tbody += `<tr><th> First Name:</th><td>${obj.first_name}</td></tr>`;
+                tbody += `<tr><th> Last Name:</th><td>${obj.last_name}</td></tr>`;
+                tbody += `<tr><th> Avatar:</th><td><img src="${obj.avatar}" alt="user avatar" /></td></tr>`;
+              }
+              document.getElementById("userdetails").innerHTML = tbody;
+              document.getElementById("userdetails").border = "2";
+            } else {
+              console.error("there was a problem with the reuest.");
+              alert("there was a problem with request");
+            }
+          }
+        } catch (e) {
+          console.erre(e);
+          alert("caught Exception:" + e.description);
+        }
+      }
+
+      function deleteemp() {
+        try {
+          document.getElementById("userdetails").innerHTML = "";
+          document.getElementById("ajaxresponse").innerText = "";
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 204) {
+              document.getElementById("userdetails").innerHTML = "User Deleted";
+            } else {
+              console.error("There was a problem with the request.");
+              alert("There was a problem with the request.");
+            }
+          }
+        } catch (e) {
+          console.error(e);
+          alert("Caught Exception: " + e.description);
+        }
+      }
+    })();
+  </script>
+</html>

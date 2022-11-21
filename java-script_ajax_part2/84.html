@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- The Fibonacci numbers are the numbers in the following integer sequence.
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ……..
+
+In mathematical terms, the sequence Fn of Fibonacci numbers is defined by the recurrence relation
+
+Fn = Fn-1 + Fn-2
+with seed values
+
+F0 = 0 and F1 = 1.
+
+WAP to print the first n terms of the Fibonacci sequence.
+
+WAP to print the Fibonacci sequence till a given number n.
+-->
+<script>
+
+
+let number=parseInt(prompt("enter the number "));
+
+let n1=0,n2=1,nextnum;
+nextnum=n1+n2;
+alert("number first"+n1);
+alert("number secand"+n2);
+while(nextnum<=number)
+{
+    alert("nextno is"+nextnum);
+    n1=n2;
+    n2=nextnum;
+    nextnum=n1+n2;
+}
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

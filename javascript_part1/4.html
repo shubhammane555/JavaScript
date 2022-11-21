@@ -1,0 +1,28 @@
+<html>
+<head>
+<script language="JavaScript">
+var name=prompt("enter name");
+var qty=parseInt(prompt("enter qty"));
+var price=parseInt(prompt("enter price"));
+var bill=qty*price;
+if(bill>10000)
+{
+var dis=bill*0.20;
+var fbill=bill-dis;
+document.write("final bill of 20% is "+fbill);
+}
+else if(bill>5000)
+{
+var dis=bill*0.10;
+var fbill=bill-dis;
+document.write("final bill of 10% is "+fbill);
+}
+else
+{
+document.write("final bill is "+bill);
+}
+</script>
+</head>
+<body>
+</body>
+</html>

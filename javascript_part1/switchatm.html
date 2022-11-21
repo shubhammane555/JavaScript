@@ -1,0 +1,41 @@
+<html>
+<head>
+<script language="JavaScript">
+var balence=7000;
+
+var c=prompt("press d for deposite \n press w for withdraw \n press b for check bal");
+
+switch(c)
+{
+case "d":
+case "D":var damt=parseInt(prompt("enter deposite amount"));
+          balence=balence+damt;
+           document.write("after deposite balence is"+balence+"deposite amount is "+damt);
+          break;
+ 
+ 
+case "w":
+case "W":var wamt=parseInt(prompt("enter withdraw amount"));
+             if(wamt>balence)
+              {
+              document.write("insufficient balence");
+              }
+             else
+             {
+             balence=balence-wamt;
+              document.write("after withdraw balence is"+balence+"withdraw amount is "+wamt);
+             }
+          break;
+
+case "b":
+case "B":document.write("your balence is"+balence);
+          break;
+
+default:document.write("invalid choice");
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <label>username: </label>
+            <input type="text" id="username" name="username" size="20" onkeyup="user()">
+ <br>
+            <label>Email Id:</label>
+<input type="text" name="email" id="emailid" size="20" >
+<br>
+<label>password:</label>
+<input type="text" name="pass" id="pass" size="20">
+<div>Show:
+    <span id="t1"></span>
+</div>
+        </fieldset>
+    </form>
+    <script>
+        function user(){
+         
+            let x=document.getElementById("username").value;
+            document.getElementById("emailid").value=x;
+            let y=document.getElementById("emailid").value;
+            document.getElementById("emailid").value=(y+"@gmail.com");
+            document.getElementById("t1").innerText=x;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    Using the switch statement, write a program to input marks of 
+    five subjects Physics, Chemistry, Biology, Mathematics, and Computer.
+     Calculate percentage and grade according to the following:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F -->
+    <script>
+
+let phy=parseInt(prompt("enter mark of phy"));
+let Che=parseInt(prompt("enter mark of che"));
+let bio=parseInt(prompt("enter mark of bio"));
+let math=parseInt(prompt("enter mark of math"));
+let comp=parseInt(prompt("enter mark of comp"));
+
+let percentage=(phy+Che+bio+math+comp)/5;
+alert("percentage is "+percentage);
+
+switch(true)
+{
+    case (percentage>=90):
+    alert("grade A");
+    break;
+    case (percentage>=80):
+    alert("grade B");
+    break;
+    case (percentage>=70):
+    alert("grade c");
+    break;
+    case (percentage>=60):
+    alert("grade d");
+    break;
+    case (percentage>=50):
+    alert("grade e");
+    break;
+   
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

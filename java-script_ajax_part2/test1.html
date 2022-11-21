@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+class Person{
+
+    constructor(name)
+    {
+        this.name=name;
+    }
+}
+class Student extends Person{
+    constructor(name,classes,rollno)
+    {
+        super(name);
+        this.classes=classes;
+        this.rollno=rollno;
+    }
+
+    getDeatils(){
+        return [this.name,this.classes,this.rollno];
+    }
+}
+class Teacher extends Person{
+    constructor(name,teacherid,subject)
+    {
+        super(name);
+        this.teacherid=teacherid;
+        this.subject=subject;
+    }
+    getDeatils(){
+        
+        return [this.name,this.teacherid,this.subject];
+    }
+}
+
+const s1=new Student("shubham",121,"math");
+const s2=new Teacher("sham",111,"eng");
+
+console.log(s1.getDeatils());
+console.log(s2.getDeatils());
+
+
+
+
+
+    </script>
+</body>
+</html>

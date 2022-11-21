@@ -1,0 +1,40 @@
+<html>
+<head>
+<script language="JavaScript">
+function  billamt()
+{
+var a= document.f1.t2.value;
+var b= document.f1.t3.value;
+var z=a*b;
+document.f1.t4.value=z;
+if(z>=4000)
+{
+document.f1.t5.value=z*0.25;
+document.f1.t6.value=z*0.75;
+}
+else
+{
+document.f1.t5.value=o;
+document.f1.t6.value=z;
+}
+}
+
+</script></head>
+<body>
+<form name=f1>
+PRODUCT NAME<input type="text" name=t1>
+<br><br>
+QUANTITY<input type="text" name=t2>
+<br><br>
+PRICE<input type="text" name=t3>
+<br><br>
+<hr color=pink size=2>
+<input type=button value=Billamt onclick="billamt()">
+<input type=reset name=reset>
+<hr color=pink size=2>
+total bill<input type="text" name=t4>
+Discount<input type="text" name=t5>
+final bill<input type="text" name=t6>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- WAP to take two inputs from the user via a prompt.
+         Use console.log to display the data types of the inputs. 
+         Print the sum if and only if both the inputs are numbers, 
+         else print "Can not add incompatible types". -->
+    <script>
+
+let num1=prompt("enter num 1");
+let num2=prompt("enter num 2");
+console.log(typeof  num1+""+ typeof num2);
+ let n1=parseInt(num1);
+ let n2=parseInt(num2);
+
+
+if(Number.isInteger(n1)&& Number.isInteger(n2))
+{
+    sum=n1+n2;
+    console.log("total sum"+sum);
+}
+else
+{
+    console.log("can not add incompatable type");
+}
+
+
+    </script>
+</body>
+</html>

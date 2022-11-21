@@ -1,0 +1,30 @@
+<html>
+<head>
+<script language="JavaScript">
+function validateme()
+{
+var name=document.regiform.uname.value;
+namepattern=/^[A-Za-z]{7,10}$/;
+if(name.match(namepattern))
+{
+alert("bhava barober ahe");
+return true;
+}
+else
+{
+alert("bhava ky managalavarun alyas ky");
+return false;
+}
+}
+</script>
+</head>
+<body bgcolor=red>
+<center>
+<form name =regiform method=post onsubmit="validateme()">
+enter name<input type="text" name="uname">
+<input type="submit" value="submit">
+</center>
+</form>
+</body>
+</html>
+

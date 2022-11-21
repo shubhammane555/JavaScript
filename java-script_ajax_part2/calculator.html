@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <main class="col-md-5 col-lg-5 mx-auto mt-4">
+        <header class="text-center">
+<h6 class="display-4 text-danger">ONLINE CALCULATOR</h6>
+        </header>
+        <hr/>
+        <div class="row">
+        <div class="col-lg-3">
+        <div id="num1" name="number" class="form-group">
+        <input type="text" 
+        placeholder="num1"
+        class="form-control"
+        id="num11"
+        autofocus
+        required 
+        />
+    </div>
+    </div>
+    <div class="col-lg-4 mx-auto" >
+    <div id="operation" name="op" class="form-group">
+    <select name="abc" id="operation1">
+        <option value="null"></option>
+<option value="+">+</option>
+<option value="-">-</option>
+<option value="*">*</option>
+<option value="/">/</option>
+<option value="%">%</option>
+
+    </select>
+</div>
+</div>
+<div class="col-lg-3">
+    <div id="num2" name="number1" class="form-group">
+        <input type="text" 
+        placeholder="num"
+        class="form-control"
+        id="num22"
+        autofocus
+        required 
+        />
+    </div>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div id="submitbutton" class="my-4">
+        <input type="submit" value="calculate" 
+        class="btn btn-block  btn-primary" onclick="myfunction()"/>
+    </div>
+</div>
+<div class="col-lg-12">
+    <div id="result" name="number1" class="form-group">
+        <input type="text" 
+        placeholder="result"
+        class="form-control"
+     
+      
+        />
+    </div>
+    </div>
+    </main>
+  
+
+</body>
+<script>
+    function myfunction(){
+    let a=parseInt(document.getElementById("num11").value);
+    let b=parseInt(document.getElementById("num22").value);
+    let c=document.getElementById("operation1").value;
+    console.log(a);
+    console.log(b);
+     console.log(c);
+   if(c=="+")
+   {
+   c1=a+b;
+    document.getElementById("result").innerText = c1;
+  }
+  else if(c=="-")
+  {
+    c1=a-b;
+    document.getElementById("result").innerText = c1;
+  }
+  else if(c=="*")
+  {
+    c1=a*b;
+    document.getElementById("result").innerText = c1;
+  }
+  else if(c=="/")
+  {
+    c1=a/b;
+    document.getElementById("result").innerText = c1;
+  }
+  else{
+    document.getElementById("result").innerText = "invalid choice";
+  }
+ 
+    }
+</script>
+</html>

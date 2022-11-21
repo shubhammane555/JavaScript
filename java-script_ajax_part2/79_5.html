@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a JavaScript function that reverses a number.
+Example x = 32245;
+Expected Output: 54223 -->
+<script>
+
+
+    let number=parseInt(prompt("enter the number"));
+    let reminder;
+    let reverse=0;
+    function reversenum(num)
+    {
+        while(num!=0)
+        {
+            reminder=num%10;
+            reverse=reverse*10+reminder;
+            num=parseInt(num/10);
+            console.log(reverse);
+        }
+    }
+    let result=reversenum(number);
+    console.log();
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create a webpage with two input text fields.
+
+One of the fields will take the temperature in Celcius as input. The other field will take the temperature in Fahrenheit as input.
+
+When the user starts typing the temperature in any of the two input fields, it will simultaneously show the converted temperature in the other unit in the other input field.
+
+For example, if the user types the temperature as 37 degrees Celsius, it should display the value as 98.6 Fahrenheit in the second input field.
+
+The temperature reading should update dynamically if the user types in either of the input fields. -->
+
+<form>
+    <fieldset>
+        <label>Temp in celcius</label>
+        <input type="text" id="cel" placeholder="0" onkeyup="cel1()">
+        <label>temp in Fahrenheit</label>
+        <input type="text" id="fer" placeholder="0" onkeyup="fer1()">
+        
+    </fieldset>
+</form>
+
+
+</body>
+<script>
+    function cel1(){
+       
+    let ce=parseInt(document.getElementById("cel").value);
+    document.getElementById("fer").value = (ce*9/5)+32;
+    }
+    function fer1(){
+        let fe=parseInt(document.getElementById("fer").value);
+        document.getElementById("cel").value = (fe-32)*5/9;
+    }
+</script>
+</html>

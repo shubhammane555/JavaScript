@@ -1,0 +1,23 @@
+<html>
+<head>
+<script language="JavaScript">
+var name=prompt("enter name");
+var job=prompt("enter job");
+var wages=parseInt(prompt("enter wages"));
+var wdays=parseInt(prompt("enter wdays"));
+var payment=wages*wdays;
+if(payment>20000)
+{
+var tax=payment*0.18;
+var fpay=payment-tax;
+document.write("final payment with tax is"+fpay);
+}
+else
+{
+document.write("final payment without tax is"+payment);
+}
+</script>
+</head>
+<body>
+</body>
+</html>

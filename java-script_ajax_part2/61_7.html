@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- A student will not be allowed to sit in an exam if his/her attendance is less than 75%.
+Take the following input from the user
+
+Number of classes held
+Number of classes attended.
+And print,
+Percentage of classes attended
+Is the student allowed to sit in the exam or not. -->
+
+<script>
+
+let numcl=parseInt(prompt("enter Number of classes held "));
+let numcla=parseInt(prompt("enter Number of classes attended.umber of classes held "));
+let medical=prompt("Did you have any medical cause? enter 'Y' for yes & 'N' for no");
+percentage=numcla/numcl *100;
+alert("percentage of attendence is"+percentage);
+if(percentage>=75 || medical=="Y")
+{
+    alert("student is applicable for exam");
+
+}
+else
+{
+    alert("student is not applicable for exam") ; 
+}
+</script>
+</body>
+</html>

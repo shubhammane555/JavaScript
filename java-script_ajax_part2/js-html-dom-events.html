@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create an HTML registration form with the email and password fields and a Register button.
+
+When the user types the password, show a help text below the password input field as per the following:
+
+"Password Strength: Weak" (in red) - if the password length is less than 6 characters
+"Password Strength: Medium" (in yellow) - if the password length is between 7 and 11 characters
+"Password Strength: Strong" (in green) - if the password length is 12 or more characters -->
+<form>
+    <fieldset>
+        <legend>Register</legend>
+        <label>Email:-</label>
+        <input type="text" id="email" name="email">
+    
+        <label>Password:-</label>
+        <input type="text" id="pass" name="pass" onkeyup="myfunction(this)">
+       <div> paasword strength:<span id="strength" ></span></div>
+        <button id="register" name="register" >Register</button>
+       
+    </fieldset>
+    
+</form>
+</body>
+<script>
+function myfunction(a){
+   let x = a.value ;
+    if(x.length<6)
+    {
+    document.getElementById("strength").innerText = "weak";
+    document.getElementById("strength").style.color="red";
+    }
+    else if(x.length>6 && x.length<=11)
+        {
+            document.getElementById("strength").innerText = "medium";
+            document.getElementById("strength").style.color="yellow";
+        }
+else if(x.length>=12)
+{
+    document.getElementById("strength").innerText = "strong";
+            document.getElementById("strength").style.color="green";
+}
+        
+    
+}
+
+
+
+
+</script>
+</html>

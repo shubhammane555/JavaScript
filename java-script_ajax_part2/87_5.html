@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Rebuild your map function, this time instead of using a for loop, use your 
+    own forEach function that you just defined. Call this new function mapWith. -->
+  <script>   
+    function addTwo(num)
+    {return num + 2;
+    }
+
+    
+    function mapWith(array, callback) {
+    const newArr = [];
+    array.forEach(x => {
+        newArr.push(callback(x));
+    });
+    return newArr;
+}
+console.log(mapWith([1, 2, 3], addTwo));
+</script>
+</body>
+</html>

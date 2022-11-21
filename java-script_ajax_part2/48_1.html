@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- WAP to ask the user whether they want to opt-in for advertisement using confirm.
+         If they opt-in for it, use an input modal method to take their email, name,
+          and phone number as input and display them using an output modal method. -->
+    <script>
+        let advertise=confirm("Do you wish to enable advertisement?")
+        if(advertise){
+            let email=prompt("enter your email");
+            let name=prompt("enter your name");
+            let phnno=prompt("enter phn no");
+            alert(email+"--"+name+"--"+phnno);
+        }
+    </script>
+</body>
+</html>

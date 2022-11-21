@@ -1,0 +1,42 @@
+<html>
+<head>
+<script language="JavaScript">
+function change()
+{
+var n=document.f1.s.selectedIndex;
+if(n==0)
+{
+document.bgColor="red";
+}
+if(n==1)
+{
+document.bgColor="blue";
+}
+if(n==2)
+{
+document.bgColor="green";
+}
+if(n==3)
+{
+document.bgColor="yellow";
+}
+if(n==4)
+{
+document.bgColor="cyan";
+}
+}
+</script>
+<body>
+<form name=f1>
+<select name=s onchange="change()">
+<option value =red>RED
+<option value =blue>BLUE
+<option value =green>GREEN
+<option value =yellow>YELLOW
+<option value =cyan>CYAN
+</select>
+</form>
+</body>
+</html>
+
+
